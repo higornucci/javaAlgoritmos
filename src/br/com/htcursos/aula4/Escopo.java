@@ -12,10 +12,10 @@ public class Escopo {
 			}
 			if (valor > 5) {
 				contador =7;
-				numero = 10;
+//				numero = 10;
 			}
-			numero = 10;
+//			numero = 10;
 		}
-		contador = 10;
+//		contador = 10;
 	}
 }

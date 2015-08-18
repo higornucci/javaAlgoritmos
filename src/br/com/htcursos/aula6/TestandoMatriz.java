@@ -2,6 +2,8 @@ package br.com.htcursos.aula6;
 
 import java.util.Scanner;
 
+import br.com.htcursos.aula7.MatrizDeResultados;
+
 public class TestandoMatriz {
 	public static void main(String[] args) {
 		Scanner leitor = new Scanner(System.in);

@@ -1,4 +1,4 @@
-package br.com.htcursos.aula6;
+package br.com.htcursos.aula7;
 
 import java.util.Random;
 
@@ -24,7 +24,7 @@ public class MatrizDeResultados {
 		}
 	}
 
-	private void imprimirAMatriz(Integer[][] resultados, int anoInicio) {
+	void imprimirAMatriz(Integer[][] resultados, int anoInicio) {
 		System.out.println(
 		"\t| Jan \t| Fev \t| Mar\t| Abr\t| Mai\t| Jun\t| Jul\t| Ago\t| Set\t| Out\t| Nov\t| Dez\t|");
 		for(int linha = 0; linha < resultados.length; linha++) {

@@ -9,32 +9,41 @@ public class ProgramaPrincipal {
 
 		Date hoje = new Date();
 
-		Pedido pedido1 = new Pedido();
-		pedido1.setData(hoje);
-		pedido1.setCliente(jao);
+		Pedido pedido = new Pedido();
+		pedido.setData(hoje);
+		pedido.setCliente(jao);
 
 		ItemDoPedido livro = new ItemDoPedido();
+		livro.setCodigo(2);
 		livro.setDescricao("Livro de Java");
 		livro.setValor(100.0);
 
 		ItemDoPedido cursoPresencialJava = new ItemDoPedido();
+		cursoPresencialJava.setCodigo(3);
 		cursoPresencialJava.setDescricao("Curso de Java");
 		cursoPresencialJava.setValor(1200.00);
 
 		ItemDoPedido cursoOnlineJava = new ItemDoPedido();
+		cursoOnlineJava.setCodigo(1);
 		cursoOnlineJava.setDescricao("Curso On Line de Java");
 		cursoOnlineJava.setValor(850.00);
 
-		ItemDoPedido pedidos[] = new ItemDoPedido[3];
-		pedidos[0] = livro;
-		pedidos[1] = cursoPresencialJava;
-		pedidos[2] = cursoOnlineJava;
+		ItemDoPedido itensDoPedido[] = new ItemDoPedido[3];
+		itensDoPedido[0] = livro;
+		itensDoPedido[1] = cursoPresencialJava;
+		itensDoPedido[2] = cursoOnlineJava;
 
-		pedido1.setItens(pedidos);
+		pedido.setItens(itensDoPedido);
+		pedido.ordenarPedidosInsertionSort();
+		pedido.adicionarItemPedido(livro);
+		pedido.adicionarItemPedido(cursoPresencialJava);
+		pedido.adicionarItemPedido(cursoOnlineJava);
 
-		pedido1.imprimirItens();
+		
+		pedido.removerItemPedido(1);
+		pedido.imprimirItens();
 
-		Double valorTotal = pedido1.calcularValorTotal();
+		Double valorTotal = pedido.calcularValorTotal();
 		System.out.println(valorTotal);
 	}
 }

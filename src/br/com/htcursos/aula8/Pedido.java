@@ -8,7 +8,7 @@ public class Pedido {
 	private ItemDoPedido itens[];
 	private Integer numeroEntradas = 0;
 
-	public ItemDoPedido[] ordenarPedidosInsertionSort() {
+	public void ordenarPedidosInsertionSort() {
 		ItemDoPedido eleito;
 		for (int i = 0; i < itens.length; i++) {
 			eleito = itens[i];
@@ -18,14 +18,13 @@ public class Pedido {
 			}
 			itens[j + 1] = eleito;
 		}
-		return itens;
 	}
 
 	public ItemDoPedido[] ordenarItensPedidosBubbleSort() {
 		ItemDoPedido aux;
-		for (int i = 0; i < itens.length; i++) {
-			for (int j = 0; j < itens.length - 1; j++) {
-				if (itens[j].getCodigo() > itens[j + 1].getCodigo()) {
+		for(int i = 0; i < itens.length; i++) {
+			for(int j = 0; j < itens.length - 1; j++) {
+				if(itens[j].getCodigo() > itens[j + 1].getCodigo()) {
 					aux = itens[j];
 					itens[j] = itens[j + 1];
 					itens[j + 1] = aux;
@@ -64,7 +63,7 @@ public class Pedido {
 			itens[j] = itens[j + 1];
 		}
 
-		itens[numeroEntradas - 1] = null;
+		itens[numeroEntradas - 1] = new ItemDoPedido();
 		numeroEntradas--;
 		return temp;
 	}
@@ -79,6 +78,7 @@ public class Pedido {
 	}
 
 	public ItemDoPedido buscaBinariaItemPedido(Integer codigo ) {
+		ordenarPedidosInsertionSort();
 		boolean achou = false;
 		int alto = itens.length - 1;
 		int baixo = 0;
@@ -107,7 +107,9 @@ public class Pedido {
 
 	public void imprimirItens() {
 		for (int i = 0; i < itens.length; i++) {
-			System.out.print(itens[i].getDescricao() + "\t:" + itens[i].getValor() + "\n");
+			if(itens[i].getCodigo() != 0) {  
+				System.out.print(itens[i] + "\n");
+			}
 		}
 
 	}
